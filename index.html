@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page de connexion</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding-top: 100px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-control {
+      border-radius: 5px;
+    }
+
+    .btn {
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2 class="text-center">Mehdy a perdu !</h2>
+    <form id="code-form">
+        <div class="form-group">
+        <input type="number" class="form-control" placeholder="Entrez votre code" id="code-input">
+        </div>
+        <button type="submit" class="btn btn-primary btn-block" id="submit-button">Se connecter</button>
+        </form>
+      <h2 class="text-center" style="margin-top: 50px; color: red; font-size: 36px;">Kiki >>>> All</h2>
+
+  </div>
+  <script>
+    document.getElementById("code-form").addEventListener("submit", function(event) {
+    event.preventDefault(); // Empêche le formulaire de se soumettre normalement
+    
+    var codeInput = document.getElementById("code-input").value;
+    if (codeInput === "5002") {
+    window.location.href = "success.html"; // Redirige vers la page "success.html"
+    } else {
+    window.location.href = "error.html"; // Redirige vers la page "error.html"
+    }
+    });
+    </script>
+
+    <script>
+var codeInput = document.getElementById("code-input");
+var submitButton = document.getElementById("submit-button");
+
+codeInput.addEventListener("input", function() {
+if (codeInput.value === "") {
+submitButton.classList.add("disabled"); // Ajoute la classe "disabled" pour désactiver le bouton
+} else {
+submitButton.classList.remove("disabled"); // Supprime la classe "disabled" pour activer le bouton
+}
+});
+
+document.getElementById("code-form").addEventListener("submit", function(event) {
+event.preventDefault(); // Empêche le formulaire de se soumettre normalement
+
+if (codeInput.value === "5002") {
+window.location.href = "success.html"; // Redirige vers la page "success.html"
+} else {
+window.location.href = "error.html"; // Redirige vers la page "error.html"
+}
+});
+</script>
+    
+    
+</body>
+</html>

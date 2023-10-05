@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Erreur</title>
+<style>
+body {
+background-color: red;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+margin: 0;
+}
+
+.error-message {
+color: white;
+font-size: 24px;
+text-align: center;
+}
+
+.timer {
+font-size: 48px;
+font-weight: bold;
+margin-top: 20px;
+}
+</style>
+</head>
+<body>
+<div class="error-message">
+<p>Mauvais code</p>
+<p class="timer" id="timer">30 secondes</p>
+</div>
+
+<script>
+var seconds = 30;
+var timerElement = document.getElementById("timer");
+
+function countdown() {
+timerElement.textContent = seconds + " secondes";
+
+if (seconds > 0) {
+seconds--;
+setTimeout(countdown, 1000);
+} else {
+window.location.href = "index.html"; // Redirige vers la page "index.html" après 30 secondes
+}
+}
+
+countdown();
+</script>
+</body>
+</html>

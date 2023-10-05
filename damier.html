@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app='Checkers' lang="fr">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="dstyle.css">
+    <title>Mon Checkers</title>
+  </head> 
+
+  <body ng-controller="checkersCtrl">
+
+    <h1>Alors ? <br> Le gout de la défaite</h1>
+
+    <h2 style="text-align: center; color: #8B4513; float: left;">Joueur : {{player}}</h2>
+    <div id="gameContainer">
+      <div>
+          <div class="row" ng-repeat="row in board">
+              <div class="square" ng-style="setClass(square)" ng-repeat="square in row track by $index" ng-click="select(square)">
+                <div ng-style="setStyling(square)" class="circle">
+                  <span>{{square.isKing ? 'K' : ''}}</span>
+                </div>
+              </div>
+          </div>
+      </div>
+    </div>
+    <h2 style="text-align: center; color: #8B4513; float: left;">Rouge : {{redScore}}</h2>
+    <h2 style="text-align: center; color: #8B4513; float: left;">Noir : {{blackScore}}</h2>
+
+    <script src="angular.min.js"></script>
+    <script src="dscript.js"></script> 
+  </body>
+
+</html>

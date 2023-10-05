@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Succès</title>
+<style>
+body {
+background-color: green;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+margin: 0;
+}
+
+.success-message {
+color: white;
+font-size: 48px;
+font-weight: bold;
+text-align: center;
+}
+</style>
+</head>
+<body>
+<div class="success-message">
+<p>Bon code</p>
+<p id="timer"></p>
+</div>
+
+<script>
+var seconds = 5;
+var timerElement = document.getElementById("timer");
+
+function countdown() {
+timerElement.textContent = seconds + " secondes";
+
+if (seconds > 0) {
+seconds--;
+setTimeout(countdown, 1000);
+} else {
+window.location.href = "damier.html"; // Redirige vers la page "damier.html" après 5 secondes
+}
+}
+
+countdown();
+</script>
+</body>
+</html>
